@@ -1,0 +1,50 @@
+//All the indexes of a given Number
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int input[]={1,2,5,7,8,4,6,5,6};
+		int x=6;
+		int arr[]=allindexes(input,x);
+		for(int i=0;i<arr.length;i++)
+		{
+		    System.out.println(arr[i]);
+		}
+	}
+	public static int[] allindexes(int input[],int x)
+	{
+	    return allindexes(input,x,0,input.length-1);
+	}
+	public static int[] allindexes(int input[],int x,int l,int r)
+	{
+	    if(l==r && input[l]!=x)
+	    {
+	         int[] ans = new int[0]; // empty array 
+            return ans;
+	    }
+	    if(l==r && input[l]==x)
+	    {
+	        int ans[]=new int[1];
+	        ans[0]=l;
+	        return ans;
+	    }
+	    int[] sans = allindexes(input, x,l+1,r); 
+                                              
+  
+	    if(input[l]==x)
+	    {
+	        int ans[]=new int[sans.length+1];
+	        ans[0]=l;
+	        for (int i = 0; i < sans.length; i++) { 
+                  
+               
+                ans[i + 1] = sans[i]; 
+            } 
+            return ans; 
+	        
+	        
+	    }
+	    else return sans;
+	    
+	}
+}
