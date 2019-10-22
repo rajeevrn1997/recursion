@@ -1,0 +1,17 @@
+//multiplication as an addition
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		System.out.println(multiply(2,10));//for extension the arguments may be taken as inputs
+	}
+	public static int multiply(int n,int m)
+	{
+	    if(n==0 || m==0)
+	    {
+	        return 0;
+	    }
+	    int sa=m+multiply(m,n-1);
+	    return sa;
+	}
+}
