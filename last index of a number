@@ -1,0 +1,26 @@
+//to print the last index of the element in the array
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[]={1,4,7,5,9,3};
+	    int x=7;
+	    System.out.println(lastindex(arr,x));
+		
+	}
+	public static int lastindex(int arr[],int x)
+	{
+	    return lastindex(arr,x,0,arr.length-1);
+	}
+	public static int lastindex(int arr[],int x,int l,int r)
+	{
+	    if(l==r && arr[l]==x)
+	    {
+	        return l;
+	    }
+	    if(arr[r]==x)
+	    {
+	        return r;
+	    }
+	    return lastindex(arr,x,l,r-1);
+	}
+}
