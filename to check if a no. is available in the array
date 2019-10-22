@@ -1,0 +1,34 @@
+// to check a no. in the Array
+public class Main
+{
+	public static void main(String[] args) {
+		int arr[]={1,4,6,7,3,8};//may be entered from the console with the for loop
+		int b=10;//may be entered from console
+		boolean ans=checknoinarray(arr,b);
+		System.out.println(ans);
+	}
+	public static boolean checknoinarray(int arr[],int x)
+	{
+	    return checknoinarray(arr,x,0,arr.length-1);
+	}
+	public static boolean checknoinarray(int arr[],int x,int l,int r)
+	{
+	    if(l==r)
+	    {
+	        if(arr[l]==x)
+	        {
+	            return true;
+	        }
+	        else
+	        {return false;
+	        }
+	    }
+	    if(arr[l]==x)
+	    {
+	        return true;
+	    }
+	    
+	    boolean sa=checknoinarray(arr,x,l+1,r);
+	    return sa;
+	}
+}
