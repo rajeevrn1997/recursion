@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+    Scanner s=new Scanner(System.in);
+    int n=s.nextInt();
+		print(n);
+	}
+	public static void print(int n)
+	{
+	    if(n<=0)
+            return;
+			
+        print(n-1);
+		
+		System.out.print(n+" ");
+	}
+}
