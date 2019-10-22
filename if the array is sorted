@@ -1,0 +1,26 @@
+//you can input the array with the standard procedures 
+public class Main
+{
+	public static void main(String[] args) {
+	int arr[]={1,3,5,6};
+	boolean ans=checkarray(arr);
+	System.out.println(ans);
+	}
+	public static boolean checkarray(int arr[])
+	{
+	   return checkarray(arr,0,arr.length-1); 
+	}
+	public static boolean checkarray(int arr[],int l,int r)
+	{
+	    if(l==r)
+	    {
+	        return true;
+	    }
+	    if(arr[l]>arr[l+1])
+	    {
+	        return false; 
+	    }
+	    boolean sa=checkarray(arr,l+1,r);
+	    return sa;
+	}
+}
