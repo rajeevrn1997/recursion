@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int result=digitcount(n);
+		System.out.println(result);
+	}
+	public static int digitcount(int n)
+	{
+	    if(n <= 9){
+			return 1;
+		}
+		int smallAns = digitcount(n / 10);
+		return smallAns + 1;
+	}
+}
