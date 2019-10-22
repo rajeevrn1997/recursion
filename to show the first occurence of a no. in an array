@@ -1,0 +1,24 @@
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[]={1,4,6,8,4,7};//may be taken as an input
+	    int x=7;//may be taken as an input
+		System.out.println(firstindex(arr,x));
+	}
+	public static int firstindex(int arr[],int x)
+	{
+	    return firstindex(arr,x,0,arr.length-1);
+	}
+	public static int firstindex(int arr[],int x,int l,int r)
+	{
+	   if(l==r && arr[l]==x)
+	   {
+	       return l;
+	   }
+	   if(arr[l]==x)
+	   {
+	       return l;
+	   }
+	   return firstindex(arr,x,l+1,r);
+	}
+}
